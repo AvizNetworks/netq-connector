@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  netq-collector:
+    image: netq-collector:latest
+    environment:
+      KAFKA_BROKER: broker:29092
+
+      DEVICE_TOPIC: SRC_DEVICE_INVENTORY
+      INTERFACE_TOPIC: SRC_INTERFACE_INVENTORY
+      CPU_TOPIC: SRC_DEVICE_CPU_UTILIZATION
+      MEMORY_TOPIC: SRC_DEVICE_MEMORY_UTILIZATION
+      FAN_TOPIC: SRC_FAN_INVENTORY
+      PSU_TOPIC: SRC_PSU_INVENTORY
+      INTERFACE_COUNTERS_TOPIC: SRC_INTERFACE_COUNTERS
+      LINK_TOPIC": "SRC_LINK_INVENTORY"
+
+      NETQ_URL: https://10.20.0.96
+      NETQ_USERNAME: admin
+      NETQ_PASSWORD: Aviz@123
+      COLLECTOR_INTERVAL: 30
+      CONNECTOR_NAME: NetQ  
+      CONNECTOR_TYPE: NetQ
+      CONNECTOR_TAGS: ""
+    networks:
+      - aviz-shared-network
+
+networks:
+  aviz-shared-network:
+    external: true
