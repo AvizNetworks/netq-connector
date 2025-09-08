@@ -5,7 +5,6 @@ services:
     image: netq-collector:latest
     environment:
       KAFKA_BROKER: broker:29092
-
       DEVICE_TOPIC: SRC_DEVICE_INVENTORY
       INTERFACE_TOPIC: SRC_INTERFACE_INVENTORY
       CPU_TOPIC: SRC_DEVICE_CPU_UTILIZATION
@@ -14,7 +13,6 @@ services:
       PSU_TOPIC: SRC_PSU_INVENTORY
       INTERFACE_COUNTERS_TOPIC: SRC_INTERFACE_COUNTERS
       LINK_TOPIC": "SRC_LINK_INVENTORY"
-
       NETQ_URL: https://10.20.0.96
       NETQ_USERNAME: admin
       NETQ_PASSWORD: Aviz@123
